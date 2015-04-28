@@ -15,8 +15,8 @@ else:
 tokens_with_count = Counter(map(lower, brown.words()))
 #Dictionary keys in Python 3 aren't indexable, so store the tokens as a list.
 #The list is sorted to prevent changes in display text on repeated runs.
-counts = array(tokens_with_count.values())
-tokens = [k for k in tokens_with_count.keys()]
+tokens = sorted([k for k in tokens_with_count.keys()])
+counts = array([tokens_with_count[k] for k in tokens])
 
 # A Zipf plot
 ranks = arange(1, len(counts)+1)
