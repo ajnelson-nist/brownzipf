@@ -1,4 +1,4 @@
-#!/usr/bin/make -f
+#!/usr/bin/env python
 
 # This software was developed at the National Institute of Standards
 # and Technology by employees of the Federal Government in the course
@@ -11,30 +11,6 @@
 #
 # We would appreciate acknowledgement if the software is used.
 
-PYTHON2 ?= python2.7
-PYTHON3 ?= python3.4
+import nltk
 
-all: \
-  demo
-
-.PHONY: \
-  demo \
-  download
-
-brown_downloaded.log: \
-  confirm_brown_downloaded.py
-	$(PYTHON3) confirm_brown_downloaded.py || (echo "ERROR:Makefile:Brown corpus not found.  Download the corpus with 'make -C $$PWD download'.  Note this is a GUI operation." >&2 ; exit 1)
-	touch $@
-
-demo: \
-  demo.png
-	open $<
-
-demo.png: \
-  brown_downloaded.log \
-  demo.py
-	$(PYTHON2) demo.py
-
-download: \
-  download_brown.py
-	$(PYTHON3) download_brown.py
+nltk.download()
