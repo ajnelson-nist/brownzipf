@@ -5,4 +5,4 @@ Example code adapted from [this gist](https://gist.github.com/7102991.git) by Fi
 
 ## Usage
 
-To create a Zipf plot of 1-grams of terms in the Brown corpus, run `make`.  You may need to run a package-installing script in the `deps` directory.
+To create an annotated Zipf plot of 1-grams of terms in the Brown corpus, run `make`.  You may need to run a package-installing script in the `deps` directory.
